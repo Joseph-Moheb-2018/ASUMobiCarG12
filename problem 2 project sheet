@@ -1,0 +1,31 @@
+int i;
+int redLed =4;
+int blueLed =5;
+int yellowLed =6;
+int whiteLed =7;
+void setup() {
+  pinMode(redLed, OUTPUT);
+   pinMode(blueLed, OUTPUT);
+  pinMode(yellowLed, OUTPUT);
+  pinMode(whiteLed, OUTPUT);
+}
+void loop() {
+  for(i=1;i=i+1;i=15)
+  {
+  digitalWrite(redLed, HIGH);   
+  delay(1000);                      
+  digitalWrite(redLed, LOW);    
+  delay(1000);     
+   digitalWrite(blueLed, HIGH);   
+  delay(1000);                      
+  digitalWrite(blueLed, LOW);    
+  delay(1000); 
+   digitalWrite(yellowLed, HIGH);   
+  delay(1000);                      
+  digitalWrite(yellowLed, LOW);    
+  delay(1000);  
+   digitalWrite(whiteLed, HIGH);   
+  delay(1000);                      
+  digitalWrite(whiteLed, LOW);    
+  delay(1000);  }                                        
+}
