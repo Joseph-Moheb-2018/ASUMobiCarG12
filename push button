@@ -120,3 +120,18 @@ void loop() {
 
   delay(100);
 }
+//example 5 4directional tilt sensor
+void setup() {
+// initialize serial communication:
+Serial.begin(9600);
+}
+void loop()
+{
+Serial.print("Photo 1: ");
+Serial.print(digitalRead(6), DEC); // Display Out 1st value
+Serial.print("; ");
+Serial.print("Photo 2: ");
+Serial.println(digitalRead(7), DEC); // Display Out 2nd value
+delay(250);
+}
+
