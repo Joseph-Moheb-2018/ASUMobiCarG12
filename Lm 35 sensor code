@@ -1,0 +1,15 @@
+int lm35sensor;
+void setup() {
+  Serial.begin(9600);
+}
+void loop() {
+  int analogvalue;
+  float temperature;
+  analogvalue=analogRead(lm35sensor);
+  temperature=float(analogvalue)/1023;
+  temperature=temperature*500;
+  Serial.print("temp;");
+  Serial.print(temperature);
+  Serial.print("C");
+  delay(1000);
+}
