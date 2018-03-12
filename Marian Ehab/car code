@@ -1,0 +1,21 @@
+//Basic Remote Control Car - Bill Tarpy - North East CoderDojo  17/01/2015
+//Feel free to use this software as a basis for your own. 
+#include <SoftwareSerial.h> //the library for seial communication
+#include <AFMotor.h> // the library for the Adafruit L293 Arduino Motor Shield
+int incomingByte = 0; // for incoming serial data
+int speed_min = 135; //the minimum "speed" the motors will turn - take it lower and motors don't turn
+int speed_max = 255;// maximum "speed" the motors will turn – you can’t put in higher
+
+int speed_left = speed_max; // set both motors to maximum speed
+int speed_right = speed_max;
+
+//as we added a Motor Shield Library we can just use the following code to define our M1 and M2 motors and their PWM frequency
+//the library takes care of all the complexity of the physical interface the Arduino uses to talk to the shield and the motor
+AF_DCMotor motor_left(1); // create motor #1, 1KHz pwm
+AF_DCMotor motor_right(3); // create motor #1, 1KHz pwm
+
+
+void setup() {
+Serial.begin(9600); // set up Serial library at 9600 bps - this is the speed the serial interface will work at
+Serial.println("Motor test!");// display message for test purposes when connected to a serial monitor 
+}
