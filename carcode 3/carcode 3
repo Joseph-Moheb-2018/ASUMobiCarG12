@@ -1,0 +1,25 @@
+case 'F':
+       // turn it on going forward
+     {  motor_left.run(FORWARD); 
+        motor_right.run(FORWARD);   
+        
+       Serial.println("Forward\n");//display message for test purposes when connected to a serial monitor
+       incomingByte='*';}
+     break;
+    
+      case 'B':
+        // turn it on going backward
+    {   motor_left.run(BACKWARD);
+       motor_right.run(BACKWARD);
+       Serial.println("Backward\n");//display message for test purposes when connected to a serial monitor
+       incomingByte='*';}
+     break;
+     
+     case 'R':
+     // turn right
+     {  
+       motor_left.run(FORWARD); 
+       motor_right.run(RELEASE);
+       Serial.println("Rotate Right\n");//display message for test purposes
+       incomingByte='*';}
+     break;
