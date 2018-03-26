@@ -1,0 +1,26 @@
+void loop() {
+  //this is our repeating loop - that will go round and round until we switch the Arduino off
+  motor_left.setSpeed(speed_left); // minimum speed 135   max speed 255
+motor_right.setSpeed(speed_right); // minimum speed 135   max speed 255  
+//first check if there is anything on the serial interface
+//we are using the Arduino's default serial interface (pins 0 and 1)so no need to define these
+    if (Serial.available() > 0) {
+    // read the incoming byte:
+    incomingByte = Serial.read();
+    }
+
+  // if there is something on the serial interface it is read and assigned to incomingByte
+  // we then use a SWITCH (case) statement which, depending on incomingByte, does different things
+  // it runs the left and right motors to produce movement Forward, Backward, Left, Right or Stop
+  //that's all there is to it!
+  
+  switch(incomingByte)
+  {
+     case 'S':
+         // stop all motors
+      { motor_left.run(RELEASE); // stopped
+       motor_right.run(RELEASE); // stopped
+       Serial.println("Stop\n"); //display message for test purposes when connected to a serial monitor
+       incomingByte='*';}
+      
+     break;
